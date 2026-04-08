@@ -1,0 +1,20 @@
+# Entorno virtual
+venv/
+env/
+
+# No subir data generada, solo que se suba lo necesario para partir
+data/processed/*.csv
+
+# Ignora archivos compilados de python, cada vez que se ejecuta codigo se crean
+__pycache__/
+*.py[cod]
+*$py.class
+# Ignora carpetas ocultas que crea jupyter de forma automática
+.ipynb_checkpoints/
+
+# Outputs
+outputs/
+
+# Ignorar configuraciones de mi IDE y de PyCham
+.vscode/
+.idea/

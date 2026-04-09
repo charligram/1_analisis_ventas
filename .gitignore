@@ -12,9 +12,6 @@ __pycache__/
 # Ignora carpetas ocultas que crea jupyter de forma automática
 .ipynb_checkpoints/
 
-# Outputs
-outputs/
-
 # Ignorar configuraciones de mi IDE y de PyCham
 .vscode/
 .idea/

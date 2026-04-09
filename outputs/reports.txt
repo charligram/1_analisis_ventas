@@ -1,0 +1,15 @@
+Resumen del análisis:
+
+- Subcategoría mas vendida: Binders
+- Región con ventas mas altas: West
+- Región con cantidad de ventas mas altas: West
+- Estado con mayor total de ventas: California
+- Estado con mayor cantidad de ventas: California
+- Tendencia de ventas al alza
+
+
+Recomendaciones:
+- Aumentar stock para productos con categoría "Binders"
+- Incentivar campañas de marketing en regiones que pertenezcan a "South"
+- Realizar campañas de marketing para fechas entre meses de Febrero y Agosto
+- Realizar eventos, promociones en mes de Septiembre y Diciembre

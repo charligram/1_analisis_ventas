@@ -1,10 +1,10 @@
 # 🧪 Proyecto de análisis en Superstore Sales
 ## ❓ Planteamiento del problema
-Un hipermercado quiere saber el comportamiento de sus ventas, analizando factores como lo son los productos que mas se venden, en que regiones tienen mas compradores, etc. Todo esto para poder impulsar campañas de marketing en lugares o productos con menos ventas y fidelizar a sectores que generen las mayores ganancias.
+Un hipermercado quiere saber el comportamiento de sus ventas, analizando factores como lo son los productos que mas se venden, en que regiones tienen mas compradores, etc. Todo esto para poder impulsar campañas de marketing en lugares/productos con menos ventas y fidelizar a sectores que generen las mayores ganancias.
 
 ## ℹ️ Dataset
-Recurso: Kaggle
-Registros: 9800
+Recurso: Kaggle 
+Registros: 9800 
 Categorías interesantes:
 - Sales
 - Order Date

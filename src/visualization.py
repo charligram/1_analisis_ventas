@@ -109,7 +109,7 @@ def create_fig_st_and_to_sale(df_state_and_total_sale):
         df_state_and_total_sale (pd.DataFrame): DataFrame que contiene en cada registro el estado y cuanto ha
         vendido en precio.
     
-    Return:
+    Returns:
         fig_state_and_total_sale (go.Figure): Figure con lo que ha vendido cada estado en total.
     """
 
@@ -138,6 +138,27 @@ def create_fig_st_and_to_sale(df_state_and_total_sale):
         yaxis=dict(title='Ventas')
     )
     return fig_state_and_total_sale
+
+def create_fig_st_and_to_sale_pie(df_state_and_total_sale):
+    """
+    Crear figure con gráfico de pie dsitribuyendo cuanto ha vendido cada estado.
+
+    Args:
+        df_state_and_total_sale (pd.DataFrame): DataFrame que contiene en cada registro el estado y cuanto ha
+        vendido en precio.
+    
+    Returns:
+        fig_state_and_total_sale_pie (go.Figure): Figure con lo que ha vendido cada estado en total en forma de pie.
+    """
+    fig_state_and_total_sale_pie = go.Figure()
+    fig_state_and_total_sale_pie.add_trace(
+        go.Pie(
+            labels=df_state_and_total_sale['State'],
+            values=df_state_and_total_sale['Sales']
+        )
+    )
+    return fig_state_and_total_sale_pie
+
 
 def create_fig_state_count(df_state_count):
     """

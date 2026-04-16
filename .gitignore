@@ -2,8 +2,8 @@
 venv/
 env/
 
-# No subir data generada, solo que se suba lo necesario para partir
-data/processed/*.csv
+# No subir data
+data/
 
 # Ignora archivos compilados de python, cada vez que se ejecuta codigo se crean
 __pycache__/

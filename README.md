@@ -63,5 +63,5 @@ Insigths:
 - Mejorar estrategias de ventas o marketing en estados que pertenezcan a 'South'
 - Mantener trabajo realizado en estados como California y New York, mejorar un poco las estrategias en estados como Texas, Washington y Pennsylvania. Ver estrategias de mejora de alto impacto para todo el resto de estados.
 
-## 👤 Author
+## 👤 Autor
 Carlos Rojas

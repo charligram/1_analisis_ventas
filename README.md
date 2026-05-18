@@ -28,16 +28,19 @@ Categorías interesantes:
 Insights:
 - Binders y Papers son las categorías que mas se venden
 - Posibilidad de mejorar el stock de los productos de esas categorías
+![Categorías más vendidas](outputs/figures/sub_category_count.png)
 
 ### Ventas totales por región
 Insights:
 - Regiones de 'West' y 'East' son las que mas beneficios traen a la empresa con cierta diferencia
 - Las ventas en el sur son pequeñas, podría mejorarse la estrategia de venta
+![Regiones con más ganancias](outputs/figures/region_and_total_sale.png)
 
 ### Cantidad de ventas por región
 Insights:
 - 'West' y 'East' lideran primer y segundo puesto de mas productos vendidos
 - Los gráficos conservan las relaciones con respecto a las ventas, es decir en todas las regiones se compran productos que rondan un precio normal, no se identifica la posibilidad de que en un region se tienda a comprar productos mas caros o mas baratos. Las regiones generan menos porque compran menos cantidad
+![Regiones con más ventas](outputs/figures/region_count.png)
 
 ### Ventas a travez del tiempo
 Insights:
@@ -45,12 +48,14 @@ Insights:
 - Los períodos entre Enero y Febrero hasta Octube tienden a tener ventas mas bajas
 - Los meses de Septiembre y Diciembre siempre tienen un alza importante en las ventas
 - En el mes de marzo hay una subida de ventas de manera periódica
+![Ventas en el tiempo](outputs/figures/months_total_sale.png)
 
 ### Ventas por estado
 Insigths:
 - California y New York son los estado con mas ganancias, acumulando entre ambas un 33.4% de las ganancias totales
 - En el gráfico de barras, los estado que están desde "Rhode Island" hacia la derecha contribuyen menos del 1% de las ventas cada uno
 - Comparando gráficos de cantidad vendida y total de ganancias vendidas, se puede notar que en algunos estados las personas compran productos mas caros que en otros, como por ejemplo lo es "Washington" y "Pennsylvania", en donde en Washington el público compra menos pero genera mayores ganancias, es decir tienden a comprar productos mas caros
+![Ventas por estado](outputs/figures/state_and_total_sale.png)
 
 ## 👁️ Insights claves generales
 - Las ventas estan concentradas significativamente en 10-11 estados que son los que aportan mas ganancias, conformando un 71.8% de las ganancias de la superstore

@@ -53,7 +53,21 @@ Como veremos en el siguiente gráfico (con logaritmo aplicado a las ventas para 
 ![sales_distribution_boxplot_ship_mode](outputs/figures/05_log_sales_dist_boxplot_by_ship_mode.png)
 
 En este caso lo que más marca la diferencia entre features categóricos es la frecuencia de las compras, por ejemplo utilizando igualmente como en el gráfico anterior el 'Ship Mode' podemos notar que 'Standard Class' es el Ship Mode más frecuente con bastante diferencia en comparación a los otros.
-![sales_distribution_ship_mode](outputs/figures/)
+
+![sales_distribution_ship_mode](outputs/figures/06_log_sales_dist_by_ship_mode.png)
+
+Ahora aqui tenemos un gráfico con logaritmo de ventas, por la naturaleza del logarítmo aplicado, no se pueden aproximar a ventas reales, pero si nos da un indicio de que la categoría 'Office Supplies' tiende a tener ventas mas bajas que las otras 2, aunque si con bastantes comprar atípicas.
+
+![log_sales_dist_boxplot_by_category](outputs/figures/24_log_sales_dist_boxplot_by_category.png)
+
+### Mean and Total sales in categories
+Ahora compararemos en varios features cuales son sus ventas promedio y cuanto en total han generado cada categoría del feature a la tienda.
+
+Aquí podemos corroborar que todos los Ship Mode tienen una venta promedio muy parecida, el cambio está en qué frecuencia compran los clientes con cada 'Ship Mode'. Donde se puede notar que la 'Standard Class' es la favorita por los usuarios. Es importante pensar que, las entregas en el mismo día si bien podrían ser "mejores" al ser más rápidas, de todas formas las personas no utilizan esa opción.
+
+![mean_and_total_sale_by_ship_mode](outputs/figures/28_mean_and_total_sales_by_ship_mode.png)
+
+
 
 ## 👁️ Insights claves generales
 - Las ventas estan concentradas significativamente en 10-11 estados que son los que aportan mas ganancias, conformando un 71.8% de las ganancias de la superstore

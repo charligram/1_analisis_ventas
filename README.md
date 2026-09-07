@@ -1,6 +1,6 @@
 # 🧪 Proyecto de análisis en Superstore Sales
 ## ❓ Planteamiento del problema
-Un hipermercado quiere saber el comportamiento de sus ventas, analizando factores como lo son los productos que mas se venden, en que regiones tienen mas compradores, etc. Todo esto para poder impulsar campañas de marketing en lugares/productos con menos ventas y fidelizar a sectores que generen las mayores ganancias.
+Un hipermercado quiere saber el comportamiento de sus ventas, analizando factores como lo son los productos que mas se venden, en que regiones tienen mas compradores, distribuciónes, etc. Todo esto para poder aprovechar de mejor manera sectores de compradores habitulaes, identificar productos mas vendidos, entre otros indicadores. Este análisis también permite señalar tendencias e incluso tener en conocimiento que factores puedan reportar poca eficiencia, con el fin de tomar decisiones.
 
 ## ℹ️ Dataset
 Recurso: Kaggle
@@ -14,16 +14,19 @@ Categorías interesantes:
 - Order Date
 - Region
 - State
+- City
 - Sub-category
 
 ## 🎯 Objetivos
 - Detectar comportamiento del mercado a lo largo del tiempo
 - Identificar productos que generan mayores ganancias
-- Analizar regiones y estados mas contribuyentes
+- Analizar zonas y segmentos mas contribuyentes
 
 ## 🧹 Limpieza de datos
-- Quitar registros con valores nulos en 'Postal Code'
-- Transformar columna 'Order Date' a un formato de tiempo
+- Transformar columnas 'Order Date' y 'Ship Date' a un formato de tiempo
+- Eliminar carcterísticas con representación de ID'S
+- Eliminar columna 'Product Name' debido a su info. no general que nos da.
+- Eliminar feature 'Postal Code' debido a que está fuertemente dado por 'Country', 'City' y 'State'
 
 ## 🔎 EDA
 ### Cantidad vendida por sub-category

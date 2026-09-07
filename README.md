@@ -25,42 +25,35 @@ Categorías interesantes:
 ## 🧹 Limpieza de datos
 - Transformar columnas 'Order Date' y 'Ship Date' a un formato de tiempo
 - Eliminar carcterísticas con representación de ID'S
-- Eliminar columna 'Product Name' debido a su info. no general que nos da.
+- Eliminar columna 'Product Name' debido a su info. no general que nos da (demasiada granularidad).
 - Eliminar feature 'Postal Code' debido a que está fuertemente dado por 'Country', 'City' y 'State'
+- Eliminar feature 'Customer Name' ya que el nombre de los clientes varía mucho y para efectos del análisis no contempla un cliente frecuente.
+- Ordenar 'Order Date' y convertirlo en el índice.
 
 ## 🔎 EDA
-### Cantidad vendida por sub-category
-Insights:
-- Binders y Papers son las categorías que mas se venden
-- Posibilidad de mejorar el stock de los productos de esas categorías
-![Categorías más vendidas](outputs/figures/sub_category_count.png)
+Cabe señalar que los gráficos mostrados a continuación corresponden a los principales descubrimientos y factores que puedan dar una señal importante sobre el comportamiento o que puedan ser de ayuda para la toma de decisiones.
 
-### Ventas totales por región
-Insights:
-- Regiones de 'West' y 'East' son las que mas beneficios traen a la empresa con cierta diferencia
-- Las ventas en el sur son pequeñas, podría mejorarse la estrategia de venta
-![Regiones con más ganancias](outputs/figures/region_and_total_sale.png)
+### Total sales by month
+- Las ventas totales de cada mes representan un patrón relativamente notable, tendiendo al alza.
+- Los meses anteriores a fin de año proporcionan un claro aumento de las ganancias de manera habitual.
+- Los meses posteriores a año nuevo representan una fuerte caída.
+- El último año de observación ha sido especialmente bueno con respecto a los anteriores.
 
-### Cantidad de ventas por región
-Insights:
-- 'West' y 'East' lideran primer y segundo puesto de mas productos vendidos
-- Los gráficos conservan las relaciones con respecto a las ventas, es decir en todas las regiones se compran productos que rondan un precio normal, no se identifica la posibilidad de que en un region se tienda a comprar productos mas caros o mas baratos. Las regiones generan menos porque compran menos cantidad
-![Regiones con más ventas](outputs/figures/region_count.png)
+![total_sales_by_month](outputs/figures/01_total_sales_by_month.png)
 
-### Ventas a travez del tiempo
-Insights:
-- El gráfico muestra una tendencia al alza de las ventas a modo general
-- Los períodos entre Enero y Febrero hasta Octube tienden a tener ventas mas bajas
-- Los meses de Septiembre y Diciembre siempre tienen un alza importante en las ventas
-- En el mes de marzo hay una subida de ventas de manera periódica
-![Ventas en el tiempo](outputs/figures/months_total_sale.png)
+### Sales distribution
+- Las ventas de cada día estan fuertemente sesgadas por debajo de los $1,500
+- Esto sugiere que el comprador habitual de la tienda no contempla gastos muy elevados, sin dejar de lado que existen unos pocos (probablemente entidades grandes) que de vez en cuando realizan una compra muy alta.
 
-### Ventas por estado
-Insigths:
-- California y New York son los estado con mas ganancias, acumulando entre ambas un 33.4% de las ganancias totales
-- En el gráfico de barras, los estado que están desde "Rhode Island" hacia la derecha contribuyen menos del 1% de las ventas cada uno
-- Comparando gráficos de cantidad vendida y total de ganancias vendidas, se puede notar que en algunos estados las personas compran productos mas caros que en otros, como por ejemplo lo es "Washington" y "Pennsylvania", en donde en Washington el público compra menos pero genera mayores ganancias, es decir tienden a comprar productos mas caros
-![Ventas por estado](outputs/figures/state_and_total_sale.png)
+![sales_distribution](outputs/figures/02_sales_distribution.png)
+
+### Sales distribution in categories
+Como veremos en el siguiente gráfico (con logaritmo aplicado a las ventas para poder notar tendencias debido al sesgo) las ventas de cada categoría no varias mucho entre sí, esto ocurre en unos cuantos features.
+
+![sales_distribution_boxplot_ship_mode](outputs/figures/05_log_sales_dist_boxplot_by_ship_mode.png)
+
+En este caso lo que más marca la diferencia entre features categóricos es la frecuencia de las compras, por ejemplo utilizando igualmente como en el gráfico anterior el 'Ship Mode' podemos notar que 'Standard Class' es el Ship Mode más frecuente con bastante diferencia en comparación a los otros.
+![sales_distribution_ship_mode](outputs/figures/)
 
 ## 👁️ Insights claves generales
 - Las ventas estan concentradas significativamente en 10-11 estados que son los que aportan mas ganancias, conformando un 71.8% de las ganancias de la superstore

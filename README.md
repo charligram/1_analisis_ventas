@@ -5,6 +5,8 @@ Un hipermercado quiere saber el comportamiento de sus ventas, analizando factore
 ## ℹ️ Dataset
 Recurso: Kaggle
 
+Link: https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting
+
 Registros: 9800 
 
 Categorías interesantes:

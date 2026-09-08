@@ -47,6 +47,11 @@ Cabe señalar que los gráficos mostrados a continuación corresponden a los pri
 
 ![sales_distribution](outputs/figures/02_sales_distribution.png)
 
+### Mean and Totales sales by month
+Acá podemos ver más claramente como los meses cercanos a fin de año (a excepcion de Octubre) suman las mayores ganancias. Aunque el mes de Marzo tiende a tener cada venta más cara que el resto, pero queda por debajo en ventas totales, esto se puede deber a compras poco frecuentes pero altas.
+
+![mean_total_sale_by_month](outputs/figures/02_01_mean_sum_sales_by_month.png)
+
 ### Sales distribution in categories
 Como veremos en el siguiente gráfico (con logaritmo aplicado a las ventas para poder notar tendencias debido al sesgo) las ventas de cada categoría no varias mucho entre sí, esto ocurre en unos cuantos features.
 
@@ -73,15 +78,20 @@ El fenómenos de features con ventas promedio caras pero beneficio pequeño y bi
 
 
 ## 👁️ Insights claves generales
-- Las ventas estan concentradas significativamente en 10-11 estados que son los que aportan mas ganancias, conformando un 71.8% de las ganancias de la superstore
-- Los periodos de Septiembre y Diciembre son los mejores para generar ganancias a la superstore, además que esta va en un crecimiento favorable
-- Productos con sub-categorias como: Appliances, Labels, Tables, Envelopes, Bookcases, Fasteners, Supplies, Machines, Copiers. No es necesario tener mas de 500 productos disponibles para cada uno en un período de 4 años
+- Aunque la tendencia general va al alza, se puede notar períodos fuertes anteriores a fin de año, que caen inmediatamente a principios del año siguiente.
+- Las ventas en general tienden a estar por debajo de los $1,500 aunque existen ventas fuertes, pero son excepciones muy aisladas.
+- Las mayores diferencias entre categorías de los features no son por tendencias de compras más caras o más baratas, si no que la desigualdad radica en la frecuencia de compra de tales productos o tipos de envío.
+- A pesar de tener las ventas unitarias en promedio más altas, Detroit es el 'City' con las menores ventas totales.
+- Existen 'Sub-Category' como Labels y Fasteners que además de una venta promedio baja, tampoco han aportado muchas ganancias totales a la tienda.
 
-## 🏆 Recomendaciones finales
+## 🤖 ML
+
+## 🏆 Business recomendations
 - Analizar capacidad de la superstore para producir los productos. Debido al posible aumento de la demanda en el futuro medianamente cercano.
-- Darle prioridad en stock a productos con mayor cantidad de ventas (sobre todo para Binders y Paper)
+- Considerar el gasto que involucra generar productos con categorías como 'Fasteners', 'Labels', 'Envelopes' y 'Art' ya que historicamente no han generado mucha ganancia.
+- Incentivar la compra de productos en 'City' como 'Detroit' y 'Jacksonville' ya que tienen de las compras unitarias más caras pero con menores ventas totales.
 - Mejorar estrategias de ventas o marketing en estados que pertenezcan a 'South'
-- Mantener trabajo realizado en estados como California y New York, mejorar un poco las estrategias en estados como Texas, Washington y Pennsylvania. Ver estrategias de mejora de alto impacto para todo el resto de estados.
+- Darle prioridad en stock a productos con mayor cantidad de ventas (sobre todo para Binders y Paper)
 
 ## 👤 Autor
 Carlos Rojas

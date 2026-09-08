@@ -77,14 +77,30 @@ El fenómenos de features con ventas promedio caras pero beneficio pequeño y bi
 ![mean_and_total_sale_by_subcategory](outputs/figures/35_mean_and_total_sales_by_subcategory.png)
 
 
-## 👁️ Insights claves generales
+## 👁️ General keys insights
 - Aunque la tendencia general va al alza, se puede notar períodos fuertes anteriores a fin de año, que caen inmediatamente a principios del año siguiente.
 - Las ventas en general tienden a estar por debajo de los $1,500 aunque existen ventas fuertes, pero son excepciones muy aisladas.
 - Las mayores diferencias entre categorías de los features no son por tendencias de compras más caras o más baratas, si no que la desigualdad radica en la frecuencia de compra de tales productos o tipos de envío.
 - A pesar de tener las ventas unitarias en promedio más altas, Detroit es el 'City' con las menores ventas totales.
 - Existen 'Sub-Category' como Labels y Fasteners que además de una venta promedio baja, tampoco han aportado muchas ganancias totales a la tienda.
 
+## ⚙️ Feature engineering
+En primer lugar hay que señalar que el modelamiento predictivo se va a enfocar en estimar las ventas de las 10 últimas semanas del dataset.
+
+Así es como se ven las ventas totales semana a semana.
+
+![total_weeks_sales](outputs/model_figures/01_total_sales_by_weeks.png)
+
+### Lag/rolling
+- Se han creado features de lag del 1 al 4, es decir las ventas de la semana inmediatamente pasada y hasta 4 semanas atrás.
+
+- Además se crea el feature de Rolling_4 para obtener el promedio de las 4 últimas semanas.
+
+- Para cada semana se extraen las características del mes y año correspondiente.
+
+
 ## 🤖 ML
+
 
 ## 🏆 Business recomendations
 - Analizar capacidad de la superstore para producir los productos. Debido al posible aumento de la demanda en el futuro medianamente cercano.

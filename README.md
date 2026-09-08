@@ -102,6 +102,7 @@ Así es como se ven las ventas totales semana a semana.
 ## 🤖 ML
 
 
+
 ## 🏆 Business recomendations
 - Analizar capacidad de la superstore para producir los productos. Debido al posible aumento de la demanda en el futuro medianamente cercano.
 - Considerar el gasto que involucra generar productos con categorías como 'Fasteners', 'Labels', 'Envelopes' y 'Art' ya que historicamente no han generado mucha ganancia.

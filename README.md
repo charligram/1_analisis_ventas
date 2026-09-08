@@ -100,7 +100,41 @@ Así es como se ven las ventas totales semana a semana.
 
 
 ## 🤖 ML
+El trabajo con machine learning se divide en 3 secciones marcadas, las cuales son un modelado con algoritmos con hiperparámetros por defecto, otro con uso de GridSearchCV y en la tercera etapa probar modelos con mejores hiperparámetros en test.
 
+### Default models
+Para realizar esta evaluación se ha separado la información de data para evaluar los modelos en 5 períodos de tiempo distintos, esto con el fin de saber el comportamiento de los modelos de manera más fidedigna y que el resultado no esté dado por una coincidencia de buena predicción en las últimas 10 semanas.
+
+Los modelos utilizados son los siguientes:
+- NaiveModel (este modelo simplemente se ha creado prediciendo las ventas de la semana pasada siempre, sirve como baseline, los otros modelos deben ser por lo menos mejores que este)
+- LinearRegression
+- SVR
+- KNN
+- RandomForestRegressor
+- XGBRegressor
+- LGBMRegressor
+
+Los resultados indican que en promedio los modelos se equivocan unos $1,500 menos que la técnica de predecir siempre las ventas de la semana pasada. Aunque SVR en este caso funciona peor que el modelo ingenuo.
+
+![mae_rmse_default_models](outputs/model_figures/02_MAE_RMSE_default_models.png)
+
+### GridSearchCV
+Ahora se ha separado inicialmente las últimas 10 semanas, por lo que se van a trabajar con el total_semanas-10
+
+El modelo lineal es que más mejoría tiene con respecto a los otros modelos, además que su error promedio no varía tanto.
+
+![best_params_maes](outputs/model_figures/03_maes_best_params.png)
+
+### Models tuned predictions in test
+Podemos ver las predicciónes para las últimas 10 semanas de cada uno de los modelos tuneados.
+
+![predictions_models_in_test](outputs/model_figures/04_models_predictions_in_test.png)
+
+Y ahora evaluamos mae y rmse de cada modelo entrenado, para las últimas 10 semanas (target final). Se puede apreciar como para este caso en específico final, el mejor modelo con los errores promedio menores es el modelo KNN.
+
+![mae_rmse_best_models_in_test](outputs/model_figures/05_mae_rmse_in_test.png)
+
+Finalmente podemos concluir que los modelos más confiables son el LinearRegression considerando las ventas históricas y para el último período de la tienda, el mejor predictor es el modelo KNN.
 
 
 ## 🏆 Business recomendations

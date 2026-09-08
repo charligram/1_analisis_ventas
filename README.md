@@ -67,6 +67,9 @@ Aquí podemos corroborar que todos los Ship Mode tienen una venta promedio muy p
 
 ![mean_and_total_sale_by_ship_mode](outputs/figures/28_mean_and_total_sales_by_ship_mode.png)
 
+El fenómenos de features con ventas promedio caras pero beneficio pequeño y biceversa, se da en otras ocaciones, para más información, ver gráficos del 28 al 35. Este es otro ejemplo con 'Sub-Category' en donde si bien la venta promedio de 'Phones' es relativamente baja, supone una gran parte de las ventas totales de la tienda y por ende, una mayor frecuencia de compra.
+
+![mean_and_total_sale_by_subcategory](outputs/figures/35_mean_and_total_sales_by_subcategory.png)
 
 
 ## 👁️ Insights claves generales

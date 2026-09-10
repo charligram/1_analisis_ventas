@@ -156,37 +156,16 @@ En la terminal: pip install -r requirements.txt
 ### 3. Descargar data
 Para poder utilizar la información es necesario descargar el dataset y crear la siguiente rama de carpetas:
 
-proyecto
-
-│
-
-├───data/ <-- Ésta carpeta debe ser creada y las de su interior
-
-│   │
-
+project
+├───data/ <-- Ésta carpeta debe ser creada y las de su interior también
 │   ├──clean/
-
-│   │
-
 │   ├──processed/
-
-│   │
-
 │   └──raw/
-
 │      └──train.csv  <-- Descargar dataset aquí
-
-│
-
 ├───notebooks/
-
-│   │...
-
-│
-
-├───README.md
-
-│...
+│   ├──01_EDA-ipynb
+...
+...
 
 ### 4. SQL
 Para que el trabajo con bases de datos funcione, se deben seguir los siguientes pasos:
@@ -203,65 +182,65 @@ Nombre recomendado: superstore_sales_forecasting
 
 Ejecutar las siguientes queries en la base de datos (click derecho sobre superstore_sales_forecasting-->Query Tool)
 
-CREATE TABLE product (
+    CREATE TABLE product (
 
-    product_id VARCHAR(200) PRIMARY KEY,
+        product_id VARCHAR(200) PRIMARY KEY,
 
-    product_name VARCHAR(200),
+        product_name VARCHAR(200),
 
-    category VARCHAR(100),
+        category VARCHAR(100),
 
-    subcategory VARCHAR(100)
+        subcategory VARCHAR(100)
 
-)
+    )
 
-CREATE TABLE geography (
+    CREATE TABLE geography (
 
-    geography_id SERIAL PRIMARY KEY,
+        geography_id SERIAL PRIMARY KEY,
 
-	country VARCHAR(50),
+        country VARCHAR(50),
 
-	city VARCHAR(50),
+        city VARCHAR(50),
 
-	"state" VARCHAR(50),
+        "state" VARCHAR(50),
 
-	region VARCHAR(50),
+        region VARCHAR(50),
 
-	postal_code VARCHAR(50)
+        postal_code VARCHAR(50)
 
-)
+    )
 
-CREATE TABLE customer(
+    CREATE TABLE customer(
 
-	customer_id VARCHAR(50),
+        customer_id VARCHAR(50),
 
-	customer_name VARCHAR(100)
+        customer_name VARCHAR(100)
 
-)
+    )
 
-CREATE TABLE sale(
+    CREATE TABLE sale(
 
-	sale_id SERIAL PRIMARY KEY,
+        sale_id SERIAL PRIMARY KEY,
 
-	order_id VARCHAR(100),
+        order_id VARCHAR(100),
 
-	order_date DATE,
+        order_date DATE,
 
-	ship_date DATE,
+        ship_date DATE,
 
-	ship_mode VARCHAR(50),
+        ship_mode VARCHAR(50),
 
-	segment VARCHAR(50),
+        segment VARCHAR(50),
 
-	product_id VARCHAR(200),
+        product_id VARCHAR(200),
 
-	geography_id INTEGER,
+        geography_id INTEGER,
 
-	customer_id VARCHAR(50),
+        customer_id VARCHAR(50),
 
-	sales NUMERIC(15, 4)
+        sales NUMERIC(15, 4)
 
-)
+    )
 
 4. Crear variables de entorno
 

@@ -157,13 +157,13 @@ En la terminal: pip install -r requirements.txt
 Para poder utilizar la información es necesario descargar el dataset y crear la siguiente rama de carpetas:
 
 project
-├───data/ <-- Ésta carpeta debe ser creada y las de su interior también
-│   ├──clean/
-│   ├──processed/
-│   └──raw/
-│      └──train.csv  <-- Descargar dataset aquí
-├───notebooks/
-│   ├──01_EDA-ipynb
+├── data/             <-- Esta carpeta debe ser creada, junto con las de su interior
+│   ├── clean/
+│   ├── processed/
+│   └── raw/
+│       └── train.csv <-- Descargar dataset aquí
+├── notebooks/
+│   ├── 01_EDA.ipynb
 ...
 ...
 

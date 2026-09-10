@@ -156,6 +156,7 @@ En la terminal: pip install -r requirements.txt
 ### 3. Descargar data
 Para poder utilizar la información es necesario descargar el dataset y crear la siguiente rama de carpetas:
 
+```
 project
 ├── data/             <-- Esta carpeta debe ser creada, junto con las de su interior
 │   ├── clean/
@@ -166,6 +167,7 @@ project
 │   ├── 01_EDA.ipynb
 ...
 ...
+```
 
 ### 4. SQL
 Para que el trabajo con bases de datos funcione, se deben seguir los siguientes pasos:

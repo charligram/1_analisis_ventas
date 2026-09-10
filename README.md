@@ -17,12 +17,12 @@ Categorías interesantes:
 - City
 - Sub-category
 
-## 🎯 Objetivos
+## 🎯 Objectives
 - Detectar comportamiento del mercado a lo largo del tiempo
 - Identificar productos que generan mayores ganancias
 - Analizar zonas y segmentos mas contribuyentes
 
-## 🧹 Limpieza de datos
+## 🧹 Data cleaning
 - Transformar columnas 'Order Date' y 'Ship Date' a un formato de tiempo
 - Eliminar carcterísticas con representación de ID'S
 - Eliminar columna 'Product Name' debido a su info. no general que nos da (demasiada granularidad).
@@ -144,5 +144,125 @@ Finalmente podemos concluir que los modelos más confiables son el LinearRegress
 - Mejorar estrategias de ventas o marketing en estados que pertenezcan a 'South'
 - Darle prioridad en stock a productos con mayor cantidad de ventas (sobre todo para Binders y Paper)
 
+## 🏃 Run project
+### 1. Crear entorno virtual (recomendado)
+En la terminal: python -m venv venv
+
+Luego activar venv: venv/Scripts/activate
+
+### 2. Instalar dependencias
+En la terminal: pip install -r requirements.txt
+
+### 3. Descargar data
+Para poder utilizar la información es necesario descargar el dataset y crear la siguiente rama de carpetas:
+
+```
+project
+├── data/             <-- Esta carpeta debe ser creada, junto con las de su interior
+│   ├── clean/
+│   ├── processed/
+│   └── raw/
+│       └── train.csv <-- Descargar dataset aquí
+├── notebooks/
+│   ├── 01_EDA.ipynb
+...
+...
+```
+
+### 4. SQL
+Para que el trabajo con bases de datos funcione, se deben seguir los siguientes pasos:
+
+1. Instalar PostgreSQL y pgAdmin 4
+
+2. Crear base de datos en pgAdmin
+
+Puedes utilizar el nombre de bases de datos que prefieras, solo que luego debe coincidir en .env
+
+Nombre recomendado: superstore_sales_forecasting
+
+3. Crear columnas
+
+Ejecutar las siguientes queries en la base de datos (click derecho sobre superstore_sales_forecasting-->Query Tool)
+
+    CREATE TABLE product (
+
+        product_id VARCHAR(200) PRIMARY KEY,
+
+        product_name VARCHAR(200),
+
+        category VARCHAR(100),
+
+        subcategory VARCHAR(100)
+
+    )
+
+    CREATE TABLE geography (
+
+        geography_id SERIAL PRIMARY KEY,
+
+        country VARCHAR(50),
+
+        city VARCHAR(50),
+
+        "state" VARCHAR(50),
+
+        region VARCHAR(50),
+
+        postal_code VARCHAR(50)
+
+    )
+
+    CREATE TABLE customer(
+
+        customer_id VARCHAR(50),
+
+        customer_name VARCHAR(100)
+
+    )
+
+    CREATE TABLE sale(
+
+        sale_id SERIAL PRIMARY KEY,
+
+        order_id VARCHAR(100),
+
+        order_date DATE,
+
+        ship_date DATE,
+
+        ship_mode VARCHAR(50),
+
+        segment VARCHAR(50),
+
+        product_id VARCHAR(200),
+
+        geography_id INTEGER,
+
+        customer_id VARCHAR(50),
+
+        sales NUMERIC(15, 4)
+
+    )
+
+4. Crear variables de entorno
+
+Al mismo nivel que README.md, requirements.txt, etc. Crear archivo con el nombre ".env"
+
+Luego añadir la siguiente información:
+
+DB_USER = postgres
+
+DB_PASSWORD = tu_password_aquí
+
+DB_HOST = localhost
+
+DB_PORT = 5432 (o puerto donde tengas corriendo postgres)
+
+DB_NAME = superstore_sales_forecasting (o el nombre de tu base de datos)
+
+5. Ejectuar scripts
+
+Ya en este punto puedes ejecutar los scripts (notebooks) en orden del 01 al 04
+
 ## 👤 Autor
-Carlos Rojas
+Carlos Rojas Villegas

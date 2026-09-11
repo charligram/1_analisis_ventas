@@ -15,6 +15,7 @@ Categorías interesantes:
 - Region
 - State
 - City
+- Category
 - Sub-category
 
 ## 🎯 Objectives
@@ -29,6 +30,19 @@ Categorías interesantes:
 - Eliminar feature 'Postal Code' debido a que está fuertemente dado por 'Country', 'City' y 'State'
 - Eliminar feature 'Customer Name' ya que el nombre de los clientes varía mucho y para efectos del análisis no contempla un cliente frecuente.
 - Ordenar 'Order Date' y convertirlo en el índice.
+
+## 📊 Power BI
+El siguiente dashboard ha sido creado a partir de la base de datos generada en PostgreSQL. Toda la información puede ser filtrada mediante el Slicer de Region o por medio de interacciónes con los gráficos. Dentro del dashboard podemos ver cosas como:
+- Ventas totales
+- Total de clientes
+- Total de productos
+- Venta promedio
+- Ventas a través de los meses
+- Total de ventas por región
+- Total de ventas por categoría
+- Total de ventas por segmento
+![sales_overview_power_bi_dashboard](outputs/power_bi/sales_overview.gif)
+
 
 ## 🔎 EDA
 Cabe señalar que los gráficos mostrados a continuación corresponden a los principales descubrimientos y factores que puedan dar una señal importante sobre el comportamiento o que puedan ser de ayuda para la toma de decisiones.
@@ -53,7 +67,7 @@ Acá podemos ver más claramente como los meses cercanos a fin de año (a excepc
 ![mean_total_sale_by_month](outputs/figures/02_01_mean_sum_sales_by_month.png)
 
 ### Sales distribution in categories
-Como veremos en el siguiente gráfico (con logaritmo aplicado a las ventas para poder notar tendencias debido al sesgo) las ventas de cada categoría no varias mucho entre sí, esto ocurre en unos cuantos features.
+Como veremos en el siguiente gráfico (con logaritmo aplicado a las ventas para poder notar tendencias debido al sesgo) las ventas de cada categoría no varían mucho entre sí, esto ocurre en unos cuantos features.
 
 ![sales_distribution_boxplot_ship_mode](outputs/figures/05_log_sales_dist_boxplot_by_ship_mode.png)
 

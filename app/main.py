@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from app.services.database_connection import engine
 from app.services.prediction import get_weekly_sales, create_features, forecast_prediction
-from app.schemas.predict import PredictionInput
+from app.schemas.predict import PredictionInput, PredictionOutput
 import joblib
 
 
@@ -18,7 +18,8 @@ def root():                             # Función disparada por la solicitud ge
 
 # Endpoint de predicciones
 # Añadir data: PredictionInput hace que se tenga que cargar como argumento lo indicado en el schema (los atributos quedan guardados en data)
-@app.post("/predict")
+# Añadir response_model=list[PredictionOutput] permite señalar que lo que se debe devolver es una lista con objetos tipo PredictionOutput, es decir que tengan order_date y sales
+@app.post("/predict", response_model=list[PredictionOutput])
 def predict(data: PredictionInput):
 
     # Obtener DataFrame con ventas totales por semana

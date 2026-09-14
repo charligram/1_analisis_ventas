@@ -18,7 +18,7 @@ def get_weekly_sales(engine):
     query = """
     SELECT order_date, sales
     FROM sale
-    ORDER BY sales ASC
+    ORDER BY order_date ASC
     """
 
     df = pd.read_sql(query, engine)

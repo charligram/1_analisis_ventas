@@ -23,6 +23,8 @@ def get_weekly_sales(engine):
 
     df = pd.read_sql(query, engine)
 
+    df['order_date'] = pd.to_datetime(df['order_date'])
+
     df_week_sales = df.groupby(pd.Grouper(key='order_date', freq='W'))['sales'].sum().reset_index()
 
     return df_week_sales

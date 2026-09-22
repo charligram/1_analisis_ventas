@@ -10,7 +10,7 @@ services:
 
   postgres:                                                   # Servicio PostgreSQL (base de datos)
     image: postgres:17                                        # Utilizar imágen postgres:17, si no está descargada, la descarga y la utiliza
-    container_name: superstore-sales-db-container             # Nombre deñ contenedor
+    container_name: superstore-sales-db-container             # Nombre del contenedor
     environment:                                              # Info entregada al servicio de base de datos
       POSTGRES_USER: ${DB_USER}                               # Usuario de postgres
       POSTGRES_PASSWORD: ${DB_PASSWORD}                       # Contraseña de postgres
@@ -19,6 +19,7 @@ services:
       - "5433:5432"                                           # Exponer puerto 5433 de la máquina local porque el 5432 lo está usando localmente PostgreSQL
     volumes:                                                  # Volume's
       - postgres_data:/var/lib/postgresql/data                # postgres_data es el nombre que se le da al volume y el resto es el directorio dentro del contenedor donde PostgreSQL guarda sus datos
+      - ./db/init:/docker-entrypoint-initdb.d
 
 volumes:                                                      # Volume's agregados
   postgres_data:                                              # Volume administrado por este proyecto (declara que el volumen existe)

@@ -260,7 +260,7 @@ Ejecutar las siguientes queries en la base de datos (click derecho sobre superst
 
 4. Crear variables de entorno
 
-Al mismo nivel que README.md, requirements.txt, etc. Crear archivo con el nombre ".env"
+Al mismo nivel que README.md, requirements.txt, etc. Crear archivo con el nombre ".env.local"
 
 Luego añadir la siguiente información:
 

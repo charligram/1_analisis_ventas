@@ -1,6 +1,7 @@
 # Entorno virtual
 venv/
 .env
+.env.local
 
 # No subir data
 data/

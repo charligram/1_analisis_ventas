@@ -11,7 +11,7 @@ dataset_path = kagglehub.dataset_download("rohitsahoo/sales-forecasting")
 print("Path to dataset files:", dataset_path)
 
 # Leer csv
-df = pd.read_csv(dataset_path+"\\train.csv")
+df = pd.read_csv(Path(dataset_path) / "train.csv")
 
 print(df.head())
 

@@ -8,6 +8,13 @@ services:
     ports:                                                    # Puertos a exponer de la API
       - "8000:8000"                                           # El puerto izquierdo es de la máquina local y de la derecha es el puerto del container
 
+  pipeline:                                                   # Servicio para poder ejecutar el download.py y load_data.py
+    build: .                                                  # Construir desde el Dockerfile de este mismo directorio 
+    container_name: superstore-sales-pipeline-container       # Nombre del contenedor
+    env_file:                                                 # Variables de entorno
+      - .env                                                  # Archivo con variables de entorno
+    command: ["sh", "-c", "python -m scripts.download && python -m scripts.load_data"]    # Sobreescribir el CMD del Dockerfile para que ejecute los 2 archivos .py
+
   postgres:                                                   # Servicio PostgreSQL (base de datos)
     image: postgres:17                                        # Utilizar imágen postgres:17, si no está descargada, la descarga y la utiliza
     container_name: superstore-sales-db-container             # Nombre del contenedor
@@ -19,7 +26,12 @@ services:
       - "5433:5432"                                           # Exponer puerto 5433 de la máquina local porque el 5432 lo está usando localmente PostgreSQL
     volumes:                                                  # Volume's
       - postgres_data:/var/lib/postgresql/data                # postgres_data es el nombre que se le da al volume y el resto es el directorio dentro del contenedor donde PostgreSQL guarda sus datos
-      - ./db/init:/docker-entrypoint-initdb.d
+      - ./db/init:/docker-entrypoint-initdb.d                 # Build mount, hacemos que lo que tenemos en db/init se ejecute
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
 volumes:                                                      # Volume's agregados
   postgres_data:                                              # Volume administrado por este proyecto (declara que el volumen existe)

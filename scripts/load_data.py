@@ -18,6 +18,8 @@ df['Order Date'] = pd.to_datetime(df['Order Date'], format='%d/%m/%Y')
 
 df = df.sort_values(by='Order Date', ascending=True)
 
+# También convertiremos Ship Date
+df['Ship Date'] = pd.to_datetime(df['Ship Date'], format='%d/%m/%Y')
 
 # Eliminar 'Row ID' y resetear índice
 df = df.drop(columns=['Row ID'])

@@ -14,6 +14,9 @@ services:
     env_file:                                                 # Variables de entorno
       - .env                                                  # Archivo con variables de entorno
     command: ["sh", "-c", "python -m scripts.download && python -m scripts.load_data"]    # Sobreescribir el CMD del Dockerfile para que ejecute los 2 archivos .py
+    depends_on:
+      postgres:
+        condition: service_healthy
 
   postgres:                                                   # Servicio PostgreSQL (base de datos)
     image: postgres:17                                        # Utilizar imágen postgres:17, si no está descargada, la descarga y la utiliza

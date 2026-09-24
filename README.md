@@ -173,10 +173,15 @@ Los pasos son los siguientes:
 2. Crear archivo .env al nivel de la raíz (mismo nivel de Dockerfile, README, etc.) con el siguiente contenido:
 
 DB_USER=postgres
+
 DB_PASSWORD=tu_password
+
 DB_HOST=postgres
+
 DB_PORT=5432
+
 DB_NAME=superstore_sales_forecasting
+
 RUNNING_IN_DOCKER=true
 
 3. Abrir terminal de PowerShell.
@@ -185,7 +190,6 @@ RUNNING_IN_DOCKER=true
 
 5. Ejecutar: docker compose up
 
-6. 
 Luego ingresar a través del navegador a: http://localhost:8000
 
 El endpoint para ejectuar predicciones se encuentra en http://localhost:8000/docs

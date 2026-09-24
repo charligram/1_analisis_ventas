@@ -8,6 +8,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app ./app
 COPY models ./models
+COPY src ./src
+COPY scripts ./scripts
+COPY data_docker ./data_docker
 
 EXPOSE 8000
 

@@ -1,9 +1,12 @@
-import os                               # Acceso a funcionalidades del sistema operativo desde Python
-from dotenv import load_dotenv          # Cargar variables de entorno
-from sqlalchemy import create_engine    # Crear motor para conexión a base de datos
+import os                                            # Acceso a funcionalidades del sistema operativo desde Python
+from dotenv import load_dotenv, find_dotenv          # Cargar variables de entorno/Encontrar variables de entorno
+from sqlalchemy import create_engine                 # Crear motor para conexión a base de datos
 
-# Cargar variables de entorno
-load_dotenv()
+# Como Docker de por sí carga las variables de entorno cuando se levanta el contenedor, primero veremos si cargo la variable
+# RUNNING_IN_DOCKER, de ser así, simplemente ocupamos las variables. En caso contrario, cargaremos las variables del .env.local
+# ya que significaría que el proyecto se está corriendo de forma manual
+if not os.getenv('RUNNING_IN_DOCKER'):
+    load_dotenv(find_dotenv('.env.local'), override=True)
 
 # Guardar variables
 user = os.getenv('DB_USER')

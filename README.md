@@ -159,15 +159,50 @@ Finalmente podemos concluir que los modelos más confiables son el LinearRegress
 - Darle prioridad en stock a productos con mayor cantidad de ventas (sobre todo para Binders y Paper)
 
 ## 🏃 Run project
-### 1. Crear entorno virtual (recomendado)
+Este proyecto puede ser lanzado de 2 formas.
+
+La primera es utilizando Docker, lo que levantará los servicios necesarios para poder hacer predicciones en una API mediante FastAPI.
+
+Como segunda opción tenemos la forma manual, que además de finalmente poder lanzar la API, también permite ejecutar los notebooks.
+
+### 1. Docker
+Los pasos son los siguientes:
+
+1. Instalar Docker Desktop
+
+2. Crear archivo .env al nivel de la raíz (mismo nivel de Dockerfile, README, etc.) con el siguiente contenido:
+
+DB_USER=postgres
+DB_PASSWORD=tu_password
+DB_HOST=postgres
+DB_PORT=5432
+DB_NAME=superstore_sales_forecasting
+RUNNING_IN_DOCKER=true
+
+3. Abrir terminal de PowerShell.
+
+4. Ingresar a la carpeta del proyecto.
+
+5. Ejecutar: docker compose up
+
+6. 
+Luego ingresar a través del navegador a: http://localhost:8000
+
+El endpoint para ejectuar predicciones se encuentra en http://localhost:8000/docs
+
+Ahi se puede probar el endpoint tipo POST /predict. Try it out, cambiar valor de 0 en "weeks_to_predict" por la cantidad de semanas a predecir y "Execute". El resultado se puede ver en el Response body.
+
+### 2. Manual y notebooks
+
+#### 2.1 Crear entorno virtual (recomendado)
 En la terminal: python -m venv venv
 
 Luego activar venv: venv/Scripts/activate
 
-### 2. Instalar dependencias
+#### 2.2 Instalar dependencias
 En la terminal: pip install -r requirements.txt
 
-### 3. Descargar data
+#### 2.3 Descargar data
 Para poder utilizar la información es necesario descargar el dataset y crear la siguiente rama de carpetas:
 
 ```
@@ -183,7 +218,7 @@ project
 ...
 ```
 
-### 4. SQL
+#### 2.4 SQL
 Para que el trabajo con bases de datos funcione, se deben seguir los siguientes pasos:
 
 1. Instalar PostgreSQL y pgAdmin 4
@@ -277,6 +312,18 @@ DB_NAME = superstore_sales_forecasting (o el nombre de tu base de datos)
 5. Ejectuar scripts
 
 Ya en este punto puedes ejecutar los scripts (notebooks) en orden del 01 al 04
+
+#### 2.5 FastAPI
+
+También se puede ejectuar la API para probar el modelo y sus predicciones.
+
+Para ello se debe ejecutar en la terminal: uvicorn app.main:app
+
+Luego ingresar a través del navegador a: http://localhost:8000
+
+El endpoint para ejectuar predicciones se encuentra en http://localhost:8000/docs
+
+Ahi se puede probar el endpoint tipo POST /predict. Try it out, cambiar valor de 0 en "weeks_to_predict" por la cantidad de semanas a predecir y "Execute". El resultado se puede ver en el Response body.
 
 ## 👤 Autor
 Carlos Rojas Villegas
